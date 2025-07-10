@@ -873,6 +873,18 @@ html, body {
     height: 100vh;
     overflow: auto; /* или не указывать, если Smooth Scrollbar сам управляет */
 }
+body, html, #scroll-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+body::-webkit-scrollbar,
+html::-webkit-scrollbar,
+#scroll-container::-webkit-scrollbar {
+    display: none; /* Safari и Chrome */
+}
+#scroll-container .scrollbar-track {
+    display: none !important;
+}
 
 /* --- Модальное окно галереи --- */
 #gallery-modal {
@@ -1171,6 +1183,10 @@ html, body {
     }
 }
 @media (max-width: 575px) {
+    .gallery-container {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
     .gallery-container .gallery-item,
     .gallery-container .gallery-show-more {
         width: 100%;
