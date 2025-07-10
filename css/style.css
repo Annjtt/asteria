@@ -6,7 +6,8 @@
     --primary-color: #7e4f30;           /* Венге */
     --primary-color-dark: #4b2e1a;      /* Тёмный венге */
     --secondary-color: #c7a17a;         /* Тёплый кофейный (латте) */
-    --text-color: #4b2e1a;              /* Венге для текста */
+    --text-color: #4b2e1a;     
+    --text-color-grey: #634e3f;       /* Венге для текста */
     --light-color: #f5ecd7;             /* Бежевый светлый */
     --dark-color: #3a2415;              /* Очень тёмный кофейный */
     --gray-color: #a58b6f;              /* Кофейный серо-бежевый */
@@ -189,22 +190,25 @@ a:hover {
     z-index: 3;
     color: #fff;
     padding: 0 20px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.151);
 }
 
 .hero-content h1 {
+    color: var(--text-color-grey);
     font-size: 3.5rem;
     margin-bottom: 1rem;
     animation: fadeInDown 1.5s;
 }
 
 .hero-content h2 {
+    color: var(--text-color-grey);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     animation: fadeInUp 1.5s;
 }
 
 .hero-content p {
+    color: var(--primary-color);
     font-size: 1.2rem;
     margin-bottom: 2rem;
     animation: fadeIn 2s;
@@ -943,3 +947,62 @@ html, body {
         font-size: 1.5rem;
     }
 }
+
+/* --- Стили для карточек сезонов --- */
+.season-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff5daa2 60%, #f3dbbd80 100%);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(62, 150, 113, 0.07);
+    position: relative;
+    min-height: 370px;
+}
+.season-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(62, 150, 113, 0.18);
+    z-index: 2;
+}
+.season-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    color: var(--light-color);
+}
+.season-icon i {
+    font-size: 2.7rem;
+    line-height: 1;
+}
+.season-card .card-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+.season-card .main-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.25rem;
+}
+.season-card .single-price {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.25rem;
+}
+.season-card .card-text {
+    color: #666;
+}
+.season-card .text-muted.small {
+    color: #888 !important;
+}
+/* Индивидуальные цвета для иконок */
+.season-icon.warm { background: linear-gradient(135deg, #3e9671, #7ed6a6); }
+.season-icon.hot { background: linear-gradient(135deg, #eca131, #f7d774); }
+.season-icon.velvet { background: linear-gradient(135deg, #b68ab4, #e6c6f5); }

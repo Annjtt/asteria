@@ -260,18 +260,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Данные о изображениях галереи (в реальном проекте эти данные могут загружаться с сервера)
         const galleryItems = [
-            { image: 'images/gallery-1.jpg', category: 'house', title: 'Фасад дома' },
-            { image: 'images/gallery-2.jpg', category: 'rooms', title: 'Стандартный номер' },
-            { image: 'images/gallery-3.jpg', category: 'territory', title: 'Зона отдыха' },
-            { image: 'images/gallery-4.jpg', category: 'beach', title: 'Пляж' },
-            { image: 'images/gallery-5.jpg', category: 'island', title: 'Природа острова' },
-            { image: 'images/gallery-6.jpg', category: 'rooms', title: 'Семейный номер' },
-            { image: 'images/gallery-7.jpg', category: 'territory', title: 'Зона барбекю' },
-            { image: 'images/gallery-8.jpg', category: 'beach', title: 'Вид на море' },
-            { image: 'images/gallery-9.jpg', category: 'island', title: 'Закат на острове' },
-            { image: 'images/gallery-10.jpg', category: 'beach', title: 'Закат на море' },
-            { image: 'images/gallery-11.jpg', category: 'island', title: 'Природа острова' },
-            { image: 'images/gallery-12.jpg', category: 'rooms', title: 'Гостинная' }
+            { image: 'images/webp/gallery-1.webp', category: 'house', title: 'Фасад дома' },
+            { image: 'images/webp/gallery-2.webp', category: 'rooms', title: 'Стандартный номер' },
+            { image: 'images/webp/gallery-3.webp', category: 'territory', title: 'Зона отдыха' },
+            { image: 'images/webp/gallery-4.webp', category: 'beach', title: 'Пляж' },
+            { image: 'images/webp/gallery-5.webp', category: 'island', title: 'Природа острова' },
+            { image: 'images/webp/gallery-6.webp', category: 'rooms', title: 'Семейный номер' },
+            { image: 'images/webp/gallery-7.webp', category: 'territory', title: 'Зона барбекю' },
+            { image: 'images/webp/gallery-8.webp', category: 'beach', title: 'Вид на море' },
+            { image: 'images/webp/gallery-9.webp', category: 'island', title: 'Закат на острове' },
+            { image: 'images/webp/gallery-10.webp', category: 'beach', title: 'Закат на море' },
+            { image: 'images/webp/gallery-11.webp', category: 'island', title: 'Природа острова' },
+            { image: 'images/webp/gallery-12.webp', category: 'rooms', title: 'Гостинная' }
         ];
 
         // Генерируем HTML для каждого изображения галереи

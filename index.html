@@ -34,7 +34,7 @@
                                 <a class="nav-link" href="#rooms">Номера</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#prices">Цены</a>
+                                <a class="nav-link" href="#seasons">Сезоны</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#gallery">Галерея</a>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="about-image">
-                            <img src="images/house-front.jpg" alt="Гостевой дом" class="img-fluid rounded">
+                            <img src="images/webp/house-front.webp" alt="Гостевой дом" class="img-fluid rounded">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -123,6 +123,8 @@
             </svg>
         </div>
 
+
+
         <!-- Rooms Section -->
         <section class="rooms section-padding bg-light" id="rooms">
             <div class="container">
@@ -144,66 +146,80 @@
             </svg>
         </div>
 
-        <!-- Pricing Section -->
-        <section class="pricing section-padding" id="prices">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <h2 class="section-title">Цены</h2>
-                        <div class="section-divider"></div>
-                        <p class="section-subtitle">Стоимость проживания и питания</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <div class="table-responsive">
-                            <table class="table table-bordered price-table">
-                                <thead>
-                                    <tr>
-                                        <th>Месяц</th>
-                                        <th>Проживание (руб/номер/сутки)</th>
-                                        <th>Питание 2-х разовое (руб/чел/сутки)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Июнь</strong></td>
-                                        <td>от 3000₽</td>
-                                        <td>900₽</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Июль</strong></td>
-                                        <td>от 3000₽</td>
-                                        <td>950₽</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Август</strong></td>
-                                        <td>от 3500₽</td>
-                                        <td>1000₽</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Сентябрь</strong></td>
-                                        <td>от 3500₽ (с 15.09 - 3000₽)</td>
-                                        <td>1000₽</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="price-notes mt-4">
-                            <p><i class="fas fa-info-circle"></i> Имеется возможность самостоятельного питания (есть кухня: плита, микроволновая печь, холодильник, чайники, кухонная утварь, посуда)</p>
-                            <p><i class="fas fa-info-circle"></i> Также на территории: 2 душа (с горячей водой), зона мангала, бесплатная парковка автомобиля</p>
-                            <p><i class="fas fa-info-circle"></i> Санузел на этаже</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <div class="section-wave">
             <svg viewBox="0 0 1440 60" width="100%" height="60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#f5ecd7"/>
             </svg>
         </div>
-
+        <!-- Seasons Section -->
+        <section class="seasons section-padding" id="seasons">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title">Сезоны</h2>
+                        <div class="section-divider"></div>
+                        <p class="section-subtitle">Выберите подходящий сезон для отдыха</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- Тёплый сезон -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0 season-card">
+                            <div class="card-body text-center">
+                                <span class="season-icon warm"><i class="fas fa-seedling"></i></span>
+                                <h4 class="card-title" style="color: #3e9671;">Тёплый</h4>
+                                <p class="card-text mb-2"><i class="fas fa-calendar-alt me-2"></i>1 июня — 15 июля</p>
+                                <p class="mb-2 main-price"><strong>Стандартный номер:</strong> 3000₽/сутки</p>
+                                <p class="mb-2 single-price"><strong>Одноместный номер:</strong> 1800₽/сутки</p>
+                                <p class="mb-2"><strong>Питание 2-разовое:</strong> 950₽/чел/сутки</p>
+                                <p class="text-muted small">Идеально для спокойного отдыха и наслаждения природой.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Жаркий сезон -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0 season-card">
+                            <div class="card-body text-center">
+                                <span class="season-icon hot"><i class="fas fa-sun"></i></span>
+                                <h4 class="card-title" style="color: #eca131;">Жаркий</h4>
+                                <p class="card-text mb-2"><i class="fas fa-calendar-alt me-2"></i>15 июля — 31 августа</p>
+                                <p class="mb-2 main-price"><strong>Стандартный номер:</strong> 3800₽/сутки</p>
+                                <p class="mb-2 single-price"><strong>Одноместный номер:</strong> 2200₽/сутки</p>
+                                <p class="mb-2"><strong>Питание 2-разовое:</strong> 950₽/чел/сутки</p>
+                                <p class="text-muted small">Пик сезона: солнце, море и насыщенный отдых!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Бархатный сезон -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0 season-card">
+                            <div class="card-body text-center">
+                                <span class="season-icon velvet"><i class="fas fa-leaf"></i></span>
+                                <h4 class="card-title" style="color: #b68ab4;">Бархатный</h4>
+                                <p class="card-text mb-2"><i class="fas fa-calendar-alt me-2"></i>1 сентября — 30 сентября</p>
+                                <p class="mb-2 main-price"><strong>Стандартный номер:</strong> 3500₽/сутки</p>
+                                <p class="mb-2 single-price"><strong>Одноместный номер:</strong> 2000₽/сутки</p>
+                                <p class="mb-2"><strong>Питание 2-разовое:</strong> 950₽/чел/сутки</p>
+                                <p class="text-muted small">Мягкая погода, меньше людей, уютная атмосфера.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <div class="alert alert-info d-inline-block" style="font-size: 1.1rem;">
+                            <i class="fas fa-shuttle-van me-2"></i>Трансфер от пристани до гостевого дома — <strong>200₽ с человека</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-notes mt-4">
+                    <p><i class="fas fa-info-circle"></i> Имеется возможность самостоятельного питания (есть кухня: плита, микроволновая печь, холодильник, чайники, кухонная утварь, посуда)</p>
+                    <p><i class="fas fa-info-circle"></i> Также на территории: 2 душа (с горячей водой), зона мангала, бесплатная парковка автомобиля</p>
+                    <p><i class="fas fa-info-circle"></i> Санузел на этаже</p>
+                </div>
+            </div>
+        </section>
+        <!-- End Seasons Section -->
         <!-- Gallery Section -->
         <section class="gallery section-padding bg-light" id="gallery">
             <div class="container">
@@ -421,7 +437,7 @@
                             <li><a href="#home">Главная</a></li>
                             <li><a href="#about">О нас</a></li>
                             <li><a href="#rooms">Номера</a></li>
-                            <li><a href="#prices">Цены</a></li>
+                            <li><a href="#seasons">Сезоны</a></li>
                             <li><a href="#gallery">Галерея</a></li>
                             <li><a href="#booking">Бронирование</a></li>
                         </ul>
