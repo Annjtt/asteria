@@ -30,6 +30,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+h7 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
 a {
     color: var(--primary-color);
     text-decoration: none;
@@ -256,7 +261,7 @@ a:hover {
 }
 
 .about-content {
-    padding: 20px 0;
+    padding: 20px 20px;
 }
 
 .about-content h3 {
@@ -581,11 +586,11 @@ a:hover {
 .contact-list {
     padding-left: 0;
     list-style-type: none;
-    margin: 25px 0;
+    margin: 15px 0;
 }
 
 .contact-list li {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .contact-list i {
@@ -1120,6 +1125,10 @@ html::-webkit-scrollbar,
   }
 
 .btn-hero-animate {
+    animation: fadeInUp 1.2s;
+}
+
+.btn-animate {
     animation: fadeInUp 1.2s;
 }
 
