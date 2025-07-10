@@ -76,6 +76,12 @@ a:hover {
     box-shadow: 0 10px 20px var(--shadow-color);
 }
 
+.btn-outline-primary:hover svg path,
+.btn-outline-primary:hover svg circle {
+    fill: #fff !important;
+    transition: fill 0.2s;
+}
+
 .section-padding {
     padding: 100px 0;
 }
