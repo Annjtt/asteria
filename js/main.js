@@ -113,11 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 name: 'Стандартный номер',
                 price: '3000₽',
-                image: 'images/webp/room-family.webp',
-                description: 'Стандартный уютный номер для семьи из 2-3 человек.',
+                image: 'images/webp/room2-3.webp',
+                description: 'Уютный номер для семьи из 2-3 человек.',
                 features: [
                     { icon: 'fa-user', text: '<strong>2-3 гостей</strong>' },
-                    { icon: 'fa-bed', text: '<strong>Одна</strong> двуспальная + <strong>1,5</strong> спальная кровать</strong>' },
+                    { icon: 'fa-bed', text: '<strong>Одна 2-х</strong> спальная и <strong>одна 1,5</strong> спальная кровати' },
                     { icon: 'fa-bath', text: 'Санузел на этаже' },
                     { icon: 'fa-info-circle', text: '<strong>6</strong> номеров' },
                 ]
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 name: 'Одноместный номер',
                 price: '1800₽',
-                image: 'images/webp/room-comfort.webp',
+                image: 'images/webp/single-room.webp',
                 description: 'Уютный номер для 1 человека с возможностью дополнительного места.',
                 features: [
                     { icon: 'fa-user', text: '<strong>1-2 гостя</strong>' },
@@ -263,18 +263,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Данные о изображениях галереи (в реальном проекте эти данные могут загружаться с сервера)
         const galleryItems = [
-            { image: 'images/webp/gallery-1.webp', category: 'house', title: 'Фасад дома' },
-            { image: 'images/webp/gallery-2.webp', category: 'rooms', title: 'Стандартный номер' },
+            { image: 'images/webp/house.webp', category: 'house', title: 'Фасад дома' },
             { image: 'images/webp/gallery-3.webp', category: 'territory', title: 'Зона отдыха' },
+            { image: 'images/webp/territory.webp', category: 'territory', title: 'Территория' },
+            { image: 'images/webp/single-room.webp', category: 'rooms', title: 'Одноместный номер' },
+            { image: 'images/webp/room2-3.webp', category: 'rooms', title: 'Семейный номер' },
             { image: 'images/webp/gallery-4.webp', category: 'beach', title: 'Пляж' },
             { image: 'images/webp/gallery-5.webp', category: 'island', title: 'Природа острова' },
-            { image: 'images/webp/gallery-6.webp', category: 'rooms', title: 'Семейный номер' },
+            { image: 'images/webp/room-family.webp', category: 'rooms', title: 'Двухместный номер' },
+            { image: 'images/webp/room-comfort.webp', category: 'rooms', title: 'Семейный номер' },
+            { image: 'images/webp/gallery-2.webp', category: 'rooms', title: 'Стандартный номер' },
+            { image: 'images/webp/gallery-6.webp', category: 'rooms', title: 'Гостинная' },
             { image: 'images/webp/gallery-7.webp', category: 'territory', title: 'Зона барбекю' },
             { image: 'images/webp/gallery-8.webp', category: 'beach', title: 'Вид на море' },
             { image: 'images/webp/gallery-9.webp', category: 'island', title: 'Закат на острове' },
             { image: 'images/webp/gallery-10.webp', category: 'beach', title: 'Закат на море' },
             { image: 'images/webp/gallery-11.webp', category: 'island', title: 'Природа острова' },
-            { image: 'images/webp/gallery-12.webp', category: 'rooms', title: 'Гостинная' }
+            { image: 'images/webp/gallery-12.webp', category: 'rooms', title: 'Гостинная' },
+            { image: 'images/webp/gallery-1.webp', category: 'house', title: 'Фасад дома' }
         ];
 
         // Генерируем HTML для каждого изображения галереи
