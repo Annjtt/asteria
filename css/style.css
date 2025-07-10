@@ -1109,18 +1109,15 @@ html::-webkit-scrollbar,
 }
 @keyframes pulse-scale {
     0% {
-        transform: scale(1);
+      transform: scale(1);
     }
-    40% {
-        transform: scale(1.12);
-    }
-    60% {
-        transform: scale(1.12);
+    50% {
+      transform: scale(1.08); /* Немного увеличиваем */
     }
     100% {
-        transform: scale(1);
+      transform: scale(1); /* Возвращаемся в исходное состояние */
     }
-}
+  }
 
 .btn-hero-animate {
     animation: fadeInUp 1.2s;

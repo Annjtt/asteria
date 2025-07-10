@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 `).join('')}
                             </ul>
                             <div class="d-flex justify-content-center mt-3">
-                                <a href="#booking" class="btn btn-outline-primary btn-sm room-book-btn">Забронировать</a>
+                                <a href="#booking" class="btn btn-outline-primary btn-sm room-book-btn btn-pulse">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isAllTab && !showAll && items.length > 5) {
                 const showMoreHTML = `
                     <div class="col-md-4 gallery-item gallery-show-more" style="display:flex;align-items:center;justify-content:center;cursor:pointer;min-height:250px;">
-                        <div class="show-more-block" style="text-align:center;width:100%;">
+                        <div class="show-more-block btn-pulse" style="text-align:center;width:100%;">
                             <div style="font-size:2.2rem;color:var(--primary-color);margin-bottom:10px;"><i class="fas fa-images"></i></div>
                             <div style="font-size:1.1rem;font-weight:600;">Показать ещё</div>
                         </div>
