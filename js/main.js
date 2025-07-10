@@ -113,34 +113,37 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 name: 'Стандартный номер',
                 price: '3000₽',
-                image: 'images/room-standard.jpg',
-                description: 'Стандартный номер для 1-2 человек с видом на двор.',
+                image: 'images/webp/room-family.webp',
+                description: 'Стандартный уютный номер для семьи из 2-3 человек.',
                 features: [
-                    { icon: 'fa-user', text: '1-2 гостя' },
-                    { icon: 'fa-bed', text: '1 двуспальная + 1 односпальная кровать' },
-                    { icon: 'fa-bath', text: 'Общий санузел' },
+                    { icon: 'fa-user', text: '<strong>2-3 гостей</strong>' },
+                    { icon: 'fa-bed', text: '<strong>Одна</strong> двуспальная + <strong>1,5</strong> спальная кровать</strong>' },
+                    { icon: 'fa-bath', text: 'Санузел на этаже' },
+                    { icon: 'fa-info-circle', text: '<strong>6</strong> номеров' },
                 ]
             },
             {
-                name: 'Номер Стандарт+',
-                price: '3500₽',
-                image: 'images/room-comfort.jpg',
-                description: 'Уютный номер для 2-3 человек с видом на двор.',
+                name: 'Двухместный номер',
+                price: '3000₽',
+                image: 'images/webp/room-standard.webp',
+                description: 'Уютный номер для 1-2 человек, отлично подойдёт для друзей или пары.',
                 features: [
-                    { icon: 'fa-user', text: '2-3 гостя' },
-                    { icon: 'fa-bed', text: '1 двуспальная + 1 односпальная кровать' },
-                    { icon: 'fa-bath', text: 'Общий санузел' },
+                    { icon: 'fa-user', text: '<strong>1-2 гостя</strong>' },
+                    { icon: 'fa-bed', text: '<strong>Две 1,5</strong> спальные кровати для двух гостей' },
+                    { icon: 'fa-bath', text: 'Санузел на этаже' },
+                    { icon: 'fa-info-circle', text: '1 номер' },
                 ]
             },
             {
-                name: 'Семейный номер',
-                price: '4000₽',
-                image: 'images/room-family.jpg',
-                description: 'Комфортный номер для семьи из 2-3 человек.',
+                name: 'Одноместный номер',
+                price: '1800₽',
+                image: 'images/webp/room-comfort.webp',
+                description: 'Уютный номер для 1 человека с возможностью дополнительного места.',
                 features: [
-                    { icon: 'fa-user', text: '2-3 гостей' },
-                    { icon: 'fa-bed', text: '1 двуспальная + 1 односпальная кровать' },
-                    { icon: 'fa-bath', text: 'Общий санузел' },
+                    { icon: 'fa-user', text: '<strong>1-2 гостя</strong>' },
+                    { icon: 'fa-bed', text: '<strong>Одна 1,5</strong> спальная кровать + <strong>Тахта</strong>' },
+                    { icon: 'fa-bath', text: 'Санузел на этаже' },
+                    { icon: 'fa-info-circle', text: '<strong>1</strong> номер' },
                 ]
             }
         ];
