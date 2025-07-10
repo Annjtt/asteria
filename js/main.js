@@ -1,0 +1,293 @@
+/**
+ * Скрипт для сайта гостевого дома "Астерия"
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    // Скролл навигации
+    const navbar = document.querySelector('.navbar');
+    const backToTop = document.querySelector('.back-to-top');
+
+    const heroSection = document.getElementById('home');
+    let heroHeight = heroSection ? heroSection.offsetHeight : 0;
+
+    function updateBackToTop(scrollY) {
+        if (scrollY > heroHeight - 20) {
+            navbar.classList.add('scrolled');
+            backToTop.classList.add('active');
+        } else {
+            navbar.classList.remove('scrolled');
+            backToTop.classList.remove('active');
+        }
+    }
+
+    // --- Smooth Scrollbar логика ---
+    let scrollbar = null;
+    if (window.Scrollbar) {
+        scrollbar = Scrollbar.init(document.getElementById('scroll-container'), {
+            damping: 0.05,
+            alwaysShowTracks: true
+        });
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+
+    if (scrollbar) {
+        scrollbar.addListener(({ offset }) => {
+            updateBackToTop(offset.y);
+            // Подсветка активной секции
+            const scrollY = offset.y;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector('.nav-link[href="#' + sectionId + '"]');
+                if (!navLink) return;
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLink.classList.add('active');
+                } else {
+                    navLink.classList.remove('active');
+                }
+            });
+        });
+    }
+
+    // Плавный скролл для якорных ссылок через Smooth Scrollbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.length > 1 && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target && scrollbar) {
+                    e.preventDefault();
+                    const rect = target.getBoundingClientRect();
+                    const containerRect = document.getElementById('scroll-container').getBoundingClientRect();
+                    const offset = rect.top - containerRect.top + scrollbar.scrollTop - 80;
+                    scrollbar.scrollTo(0, offset, 800);
+                }
+            }
+        });
+    });
+
+    // Фильтрация галереи
+    const galleryFilter = document.querySelector('#gallery-filter');
+    const galleryContainer = document.querySelector('#gallery-container');
+    
+    if (galleryFilter && galleryContainer) {
+        galleryFilter.addEventListener('click', function(e) {
+            if (e.target.classList.contains('nav-link')) {
+                const filter = e.target.getAttribute('data-filter');
+                
+                // Удаляем active у всех фильтров и добавляем для выбранного
+                galleryFilter.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                e.target.classList.add('active');
+                
+                // Фильтруем элементы галереи
+                if (filter === 'all') {
+                    galleryContainer.querySelectorAll('.gallery-item').forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else {
+                    galleryContainer.querySelectorAll('.gallery-item').forEach(item => {
+                        if (item.classList.contains(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    // Динамическая загрузка номеров
+    const loadRooms = function() {
+        const roomsContainer = document.querySelector('#rooms .row:nth-child(2)');
+        if (!roomsContainer) return;
+
+        // Данные о номерах (в реальном проекте эти данные могут загружаться с сервера)
+        const rooms = [
+            {
+                name: 'Стандартный номер',
+                price: '3000₽',
+                image: 'images/room-standard.jpg',
+                description: 'Стандартный номер для 1-2 человек с видом на двор.',
+                features: [
+                    { icon: 'fa-user', text: '1-2 гостя' },
+                    { icon: 'fa-bed', text: '1 двуспальная + 1 односпальная кровать' },
+                    { icon: 'fa-bath', text: 'Общий санузел' },
+                ]
+            },
+            {
+                name: 'Номер Стандарт+',
+                price: '3500₽',
+                image: 'images/room-comfort.jpg',
+                description: 'Уютный номер для 2-3 человек с видом на двор.',
+                features: [
+                    { icon: 'fa-user', text: '2-3 гостя' },
+                    { icon: 'fa-bed', text: '1 двуспальная + 1 односпальная кровать' },
+                    { icon: 'fa-bath', text: 'Общий санузел' },
+                ]
+            },
+            {
+                name: 'Семейный номер',
+                price: '4000₽',
+                image: 'images/room-family.jpg',
+                description: 'Комфортный номер для семьи из 2-3 человек.',
+                features: [
+                    { icon: 'fa-user', text: '2-3 гостей' },
+                    { icon: 'fa-bed', text: '1 двуспальная + 1 односпальная кровать' },
+                    { icon: 'fa-bath', text: 'Общий санузел' },
+                ]
+            }
+        ];
+
+        // Генерируем HTML для каждого номера
+        rooms.forEach(room => {
+            const roomHTML = `
+                <div class="col-md-4">
+                    <div class="room-card">
+                        <div class="room-image">
+                            <img src="${room.image}" alt="${room.name}">
+                        </div>
+                        <div class="room-details">
+                            <h3 class="room-name">${room.name}</h3>
+                            <div class="room-price">от ${room.price} / сутки</div>
+                            <p>${room.description}</p>
+                            <ul class="room-features">
+                                ${room.features.map(feature => `
+                                    <li><i class="fas ${feature.icon}"></i> ${feature.text}</li>
+                                `).join('')}
+                            </ul>
+                            <a href="#booking" class="btn btn-outline-primary btn-sm">Забронировать</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            roomsContainer.innerHTML += roomHTML;
+        });
+    };
+
+    // Загрузка FAQ вопросов
+    const loadFAQ = function() {
+        const faqContainer = document.querySelector('#faqAccordion');
+        if (!faqContainer) return;
+
+        // Данные о вопросах и ответах
+        const faqs = [
+            {
+                question: 'Как добраться до острова Попова?',
+                answer: '<b>До острова Попова можно добраться на пассажирском катере с Корабельной набережной города Владивостока.</b> Время в пути около 50 минут. Расписание катеров зависит от сезона, но обычно они ходят несколько раз в день.'
+            },
+            {
+                question: 'Что включено в стоимость проживания?',
+                answer: '<b>В стоимость проживания включено:</b> размещение в выбранном номере, пользование общей кухней, зоной барбекю, душем с горячей водой. <b>Питание оплачивается отдельно или можно готовить самостоятельно.</b>'
+            },
+            {
+                question: 'Можно ли с домашними животными?',
+                answer: '<b>К сожалению,</b> размещение с домашними животными <b>не предусмотрено</b> для обеспечения комфорта всех гостей и поддержания чистоты в помещениях.'
+            },
+            {
+                question: 'Есть ли на острове магазины?',
+                answer: '<b>Да,</b> на острове достаточно продуктовых магазинов, где можно приобрести основные продукты питания. <b>Однако ассортимент ограничен,</b> поэтому рекомендуется привозить специфические продукты с собой.'
+            },
+            {
+                question: 'Какие развлечения доступны на острове?',
+                answer: '<b>Остров Попова предлагает множество возможностей для активного отдыха:</b> пляжи для купания, прогулки по живописным тропам, рыбалка, сбор морепродуктов, катание на лодках и каяках. На территории гостевого дома есть зона барбекю для вечерних посиделок.'
+            },
+            {
+                question: 'Как заранее забронировать номер?',
+                answer: 'Забронировать номер можно по телефону <b>+7 924 252-79-10</b> - Для подтверждения бронирования может потребоваться предоплата.'
+            }
+        ];
+
+        // Генерируем HTML для каждого вопроса
+        faqs.forEach((faq, index) => {
+            const faqHTML = `
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading${index}">
+                        <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapse${index}" 
+                                aria-expanded="${index === 0 ? 'true' : 'false'}" 
+                                aria-controls="collapse${index}">
+                            ${faq.question}
+                        </button>
+                    </h2>
+                    <div id="collapse${index}" 
+                         class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" 
+                         aria-labelledby="heading${index}" 
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                </div>
+            `;
+            faqContainer.innerHTML += faqHTML;
+        });
+    };
+
+    // Загрузка галереи
+    const loadGallery = function() {
+        const galleryContainer = document.querySelector('#gallery-container');
+        if (!galleryContainer) return;
+
+        // Данные о изображениях галереи (в реальном проекте эти данные могут загружаться с сервера)
+        const galleryItems = [
+            { image: 'images/gallery-1.jpg', category: 'house', title: 'Фасад дома' },
+            { image: 'images/gallery-2.jpg', category: 'rooms', title: 'Стандартный номер' },
+            { image: 'images/gallery-3.jpg', category: 'territory', title: 'Зона отдыха' },
+            { image: 'images/gallery-4.jpg', category: 'beach', title: 'Пляж' },
+            { image: 'images/gallery-5.jpg', category: 'island', title: 'Природа острова' },
+            { image: 'images/gallery-6.jpg', category: 'rooms', title: 'Семейный номер' },
+            { image: 'images/gallery-7.jpg', category: 'territory', title: 'Зона барбекю' },
+            { image: 'images/gallery-8.jpg', category: 'beach', title: 'Вид на море' },
+            { image: 'images/gallery-9.jpg', category: 'island', title: 'Закат на острове' },
+            { image: 'images/gallery-10.jpg', category: 'beach', title: 'Закат на море' },
+            { image: 'images/gallery-11.jpg', category: 'island', title: 'Природа острова' },
+            { image: 'images/gallery-12.jpg', category: 'rooms', title: 'Гостинная' }
+        ];
+
+        // Генерируем HTML для каждого изображения галереи
+        galleryItems.forEach(item => {
+            const galleryHTML = `
+                <div class="col-md-4 gallery-item ${item.category}">
+                    <div class="gallery-image">
+                        <img src="${item.image}" alt="${item.title}">
+                        <div class="gallery-overlay">
+                            <a href="${item.image}" data-lightbox="gallery" data-title="${item.title}">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            galleryContainer.innerHTML += galleryHTML;
+        });
+    };
+
+    // Запуск загрузки данных
+    loadRooms();
+    loadFAQ();
+    loadGallery();
+
+    // Кнопка "Наверх"
+    if (scrollbar) {
+        scrollbar.addListener(({ offset }) => {
+            if (offset.y > heroHeight - 20) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollbar.scrollTo(0, 0, 800);
+        });
+    }
+});
