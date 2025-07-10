@@ -333,6 +333,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    // Автоматическое закрытие мобильного меню при выборе пункта
+    const navbarCollapse = document.getElementById('navbarNav');
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+
     // Запуск загрузки данных
     loadRooms();
     loadFAQ();
