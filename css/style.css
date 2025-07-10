@@ -395,6 +395,16 @@ a:hover {
     box-shadow: 0 5px 15px var(--shadow-color);
     position: relative;
     background-color: var(--light-color);
+    margin-right: 16px;
+    margin-left: 0;
+}
+.gallery-item:last-child {
+    margin-right: 0;
+}
+@media (max-width: 991px) {
+    .gallery-item {
+        margin-right: 0;
+    }
 }
 
 .gallery-image {
@@ -937,6 +947,38 @@ html, body {
 .gallery-modal-close:hover {
     background: var(--primary-color-dark);
 }
+.gallery-modal-prev,
+.gallery-modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(99, 78, 63, 0.85); /* Венге с прозрачностью */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    opacity: 0.85;
+}
+.gallery-modal-prev:hover,
+.gallery-modal-next:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-50%) scale(1.08);
+    opacity: 1;
+}
+.gallery-modal-prev {
+    left: 12px;
+}
+.gallery-modal-next {
+    right: 12px;
+}
 @media (max-width: 767px) {
     .gallery-modal-img {
         max-width: 96vw;
@@ -952,6 +994,16 @@ html, body {
         height: 32px;
         font-size: 1.5rem;
     }
+    .gallery-modal-prev,
+    .gallery-modal-next {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+        left: 4px;
+        right: 4px;
+    }
+    .gallery-modal-prev { left: 4px; }
+    .gallery-modal-next { right: 4px; }
 }
 
 /* --- Стили для карточек сезонов --- */
@@ -1053,5 +1105,70 @@ html, body {
     to {
         transform: scale(1.2);
         opacity: 0;
+    }
+}
+
+.gallery-show-more {
+    min-height: 250px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #fff8f0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: box-shadow 0.2s, background 0.2s;
+    margin-bottom: 30px;
+    margin-right: 16px;
+}
+.gallery-show-more .show-more-block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+}
+.gallery-show-more:hover {
+    background: #f5ecd7;
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+.gallery-show-more .show-more-block div {
+    margin-bottom: 0;
+}
+@media (max-width: 991px) {
+    .gallery-show-more, .gallery-item {
+        margin-right: 0;
+    }
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+.gallery-container .gallery-item,
+.gallery-container .gallery-show-more {
+    width: calc(33.333% - 24px);
+    margin: 0 12px 30px 12px;
+    box-sizing: border-box;
+}
+@media (max-width: 991px) {
+    .gallery-container .gallery-item,
+    .gallery-container .gallery-show-more {
+        width: calc(50% - 24px);
+    }
+}
+@media (max-width: 575px) {
+    .gallery-container .gallery-item,
+    .gallery-container .gallery-show-more {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 }

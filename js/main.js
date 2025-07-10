@@ -283,20 +283,74 @@ document.addEventListener('DOMContentLoaded', function() {
             { image: 'images/webp/gallery-1.webp', category: 'house', title: 'Фасад дома' }
         ];
 
-        // Генерируем HTML для каждого изображения галереи
-        galleryItems.forEach((item, idx) => {
-            const galleryHTML = `
-                <div class="col-md-4 gallery-item ${item.category}">
-                    <div class="gallery-image" data-idx="${idx}" style="cursor:pointer;">
-                        <img src="${item.image}" alt="${item.title}">
-                        <div class="gallery-overlay">
-                            <i class="fas fa-search-plus"></i>
+        // --- Вспомогательная функция для рендера фото ---
+        function renderGallery(items, showAll, filter) {
+            galleryContainer.innerHTML = '';
+            let toShow = items;
+            let isAllTab = filter === 'all';
+            if (isAllTab && !showAll && items.length > 5) {
+                toShow = items.slice(0, 5);
+            }
+            toShow.forEach((item, idx) => {
+                const galleryHTML = `
+                    <div class="col-md-4 gallery-item ${item.category}" data-gallery-idx="${idx}">
+                        <div class="gallery-image" data-idx="${galleryItems.indexOf(item)}" style="cursor:pointer;">
+                            <img src="${item.image}" alt="${item.title}">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-            galleryContainer.innerHTML += galleryHTML;
-        });
+                `;
+                galleryContainer.innerHTML += galleryHTML;
+            });
+            // Если вкладка "Все" и не все показаны — добавить блок "Показать ещё"
+            if (isAllTab && !showAll && items.length > 5) {
+                const showMoreHTML = `
+                    <div class="col-md-4 gallery-item gallery-show-more" style="display:flex;align-items:center;justify-content:center;cursor:pointer;min-height:250px;">
+                        <div class="show-more-block" style="text-align:center;width:100%;">
+                            <div style="font-size:2.2rem;color:var(--primary-color);margin-bottom:10px;"><i class="fas fa-images"></i></div>
+                            <div style="font-size:1.1rem;font-weight:600;">Показать ещё</div>
+                        </div>
+                    </div>
+                `;
+                galleryContainer.innerHTML += showMoreHTML;
+            }
+        }
+
+        // --- Основная логика фильтрации ---
+        let showAllInAllTab = false;
+        let currentFilter = 'all';
+        function applyGalleryFilter(filter) {
+            currentFilter = filter;
+            showAllInAllTab = false;
+            if (filter === 'all') {
+                renderGallery(galleryItems, false, 'all');
+            } else {
+                renderGallery(galleryItems.filter(item => item.category === filter), true, filter);
+            }
+            attachGalleryEvents();
+        }
+
+        // --- События для фото и блока "Показать ещё" ---
+        function attachGalleryEvents() {
+            // Открытие модалки по фото
+            galleryContainer.querySelectorAll('.gallery-image').forEach(imgDiv => {
+                imgDiv.addEventListener('click', function() {
+                    const idx = +this.getAttribute('data-idx');
+                    showModal(idx);
+                });
+            });
+            // Клик по "Показать ещё"
+            const showMore = galleryContainer.querySelector('.gallery-show-more');
+            if (showMore) {
+                showMore.addEventListener('click', function() {
+                    showAllInAllTab = true;
+                    renderGallery(galleryItems, true, 'all');
+                    attachGalleryEvents();
+                });
+            }
+        }
 
         // --- Модальное окно для просмотра фото ---
         if (!document.getElementById('gallery-modal')) {
@@ -306,7 +360,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="gallery-modal-backdrop"></div>
                 <div class="gallery-modal-content">
                     <button class="gallery-modal-close" aria-label="Закрыть">&times;</button>
+                    <button class="gallery-modal-prev" aria-label="Предыдущее"><i class="fas fa-chevron-left"></i></button>
                     <img src="" alt="" class="gallery-modal-img">
+                    <button class="gallery-modal-next" aria-label="Следующее"><i class="fas fa-chevron-right"></i></button>
                     <div class="gallery-modal-caption"></div>
                 </div>
             `;
@@ -317,19 +373,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalCaption = modal.querySelector('.gallery-modal-caption');
         const modalClose = modal.querySelector('.gallery-modal-close');
         const modalBackdrop = modal.querySelector('.gallery-modal-backdrop');
+        const modalPrev = modal.querySelector('.gallery-modal-prev');
+        const modalNext = modal.querySelector('.gallery-modal-next');
 
-        // Открытие модалки
-        galleryContainer.querySelectorAll('.gallery-image').forEach(imgDiv => {
-            imgDiv.addEventListener('click', function() {
-                const idx = +this.getAttribute('data-idx');
-                const item = galleryItems[idx];
-                modalImg.src = item.image;
-                modalImg.alt = item.title;
-                modalCaption.textContent = item.title;
-                modal.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-        });
+        let currentIdx = 0;
+        function showModal(idx) {
+            currentIdx = (idx + galleryItems.length) % galleryItems.length;
+            const item = galleryItems[currentIdx];
+            modalImg.src = item.image;
+            modalImg.alt = item.title;
+            modalCaption.textContent = item.title;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
         // Закрытие модалки
         function closeModal() {
             modal.classList.remove('open');
@@ -338,8 +394,37 @@ document.addEventListener('DOMContentLoaded', function() {
         modalClose.addEventListener('click', closeModal);
         modalBackdrop.addEventListener('click', closeModal);
         document.addEventListener('keydown', function(e) {
-            if (modal.classList.contains('open') && (e.key === 'Escape' || e.key === 'Esc')) closeModal();
+            if (!modal.classList.contains('open')) return;
+            if (e.key === 'Escape' || e.key === 'Esc') closeModal();
+            if (e.key === 'ArrowLeft') showModal(currentIdx - 1);
+            if (e.key === 'ArrowRight') showModal(currentIdx + 1);
         });
+        modalPrev.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showModal(currentIdx - 1);
+        });
+        modalNext.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showModal(currentIdx + 1);
+        });
+
+        // --- События фильтра ---
+        const galleryFilter = document.querySelector('#gallery-filter');
+        if (galleryFilter) {
+            galleryFilter.addEventListener('click', function(e) {
+                if (e.target.classList.contains('nav-link')) {
+                    const filter = e.target.getAttribute('data-filter');
+                    // Удаляем active у всех фильтров и добавляем для выбранного
+                    galleryFilter.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    e.target.classList.add('active');
+                    applyGalleryFilter(filter);
+                }
+            });
+        }
+        // Первичная отрисовка
+        applyGalleryFilter('all');
     };
 
     // Автоматическое закрытие мобильного меню при выборе пункта
