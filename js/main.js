@@ -353,6 +353,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // --- Анимация появления и пульсации кнопки "Забронировать" в hero ---
+    const heroBookBtn = document.querySelector('.hero-content .btn-hero-animate');
+    if (heroBookBtn) {
+        heroBookBtn.addEventListener('animationend', function(e) {
+            if (e.animationName === 'fadeInUp') {
+                heroBookBtn.classList.remove('btn-hero-animate');
+                // Явно сбрасываем transform, чтобы не было конфликта
+                heroBookBtn.style.transform = 'scale(1)';
+                // Даем браузеру применить стиль (через requestAnimationFrame)
+                requestAnimationFrame(() => {
+                    heroBookBtn.classList.add('btn-pulse');
+                    // Через небольшой таймаут убираем inline-стиль, чтобы работал только CSS
+                    setTimeout(() => {
+                        heroBookBtn.style.transform = '';
+                    }, 10);
+                });
+            }
+        });
+    }
+
+    // Добавляем ripple-эффект для всех кнопок
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mouseenter', function(e) {
+            const oldRipple = btn.querySelector('.ripple');
+            if (oldRipple) oldRipple.remove();
+            const rect = btn.getBoundingClientRect();
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            btn.appendChild(ripple);
+            ripple.addEventListener('animationend', () => {
+                ripple.remove();
+            });
+        });
+    });
+
     // Запуск загрузки данных
     loadRooms();
     loadFAQ();

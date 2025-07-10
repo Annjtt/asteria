@@ -216,7 +216,7 @@ a:hover {
 }
 
 .hero-content .btn {
-    animation: fadeInUp 2.5s;
+    margin-top: 20px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1006,3 +1006,46 @@ html, body {
 .season-icon.warm { background: linear-gradient(135deg, #3e9671, #7ed6a6); }
 .season-icon.hot { background: linear-gradient(135deg, #eca131, #f7d774); }
 .season-icon.velvet { background: linear-gradient(135deg, #b68ab4, #e6c6f5); }
+
+.btn-pulse {
+    animation: pulse-scale 2.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes pulse-scale {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.12);
+    }
+    60% {
+        transform: scale(1.12);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-hero-animate {
+    animation: fadeInUp 1.2s;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animate 0.4s linear;
+    background: var(--text-color-grey);
+    pointer-events: none;
+    z-index: 2;
+}
+@keyframes ripple-animate {
+    to {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
