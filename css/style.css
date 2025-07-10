@@ -1004,11 +1004,12 @@ html, body {
         width: 32px;
         height: 32px;
         font-size: 1.2rem;
-        left: 4px;
-        right: 4px;
+        top: 50%;
+        bottom: unset;
+        transform: translateY(-50%);
     }
-    .gallery-modal-prev { left: 4px; }
-    .gallery-modal-next { right: 4px; }
+    .gallery-modal-prev { left: 6px; right: auto; }
+    .gallery-modal-next { right: 6px; left: auto; }
 }
 
 /* --- Стили для карточек сезонов --- */
