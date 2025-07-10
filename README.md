@@ -25,7 +25,6 @@ Aj/
 ├── css/              # Стили сайта (style.css)
 ├── js/               # JavaScript (main.js)
 ├── images/           # Изображения и галерея
-├── fonts/            # Шрифты (опционально)
 ├── index.html        # Главная страница
 ├── README.md         # Документация
 └── ...
@@ -101,4 +100,4 @@ Aj/
 
 ## 👨‍💻 Разработка
 
-**Сайт разработан студией [SH Studio](https://shstudio.ru)** 
+**Сайт разработан студией [SH Studio](https://t.me/sh_studio_official)** 
