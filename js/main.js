@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarCollapse = document.getElementById('navbarNav');
     document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
         link.addEventListener('click', function() {
-            if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+            if (window.innerWidth < 1400 && navbarCollapse && navbarCollapse.classList.contains('show')) {
                 const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
                 bsCollapse.hide();
             }
