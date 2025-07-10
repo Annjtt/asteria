@@ -3,7 +3,7 @@
    =============================================== */
 
 :root {
-    --primary-color: #7e4f30;           /* Венге */
+    --primary-color: #634e3f;           /* Венге */
     --primary-color-dark: #4b2e1a;      /* Тёмный венге */
     --secondary-color: #c7a17a;         /* Тёплый кофейный (латте) */
     --text-color: #4b2e1a;     
@@ -118,8 +118,9 @@ a:hover {
 }
 
 .navbar-brand {
-    font-weight: 700;
-    font-size: 1.8rem;
+    margin-left: 10px;
+    font-weight: 650;
+    font-size: 1.5rem;
     color: var(--primary-color);
 }
 
@@ -750,11 +751,16 @@ a:hover {
 
 @media (max-width: 575px) {
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
     }
     
     .hero-content h2 {
         font-size: 1.3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
     }
     
     .section-title {
