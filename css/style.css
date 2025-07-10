@@ -82,6 +82,17 @@ a:hover {
     transition: fill 0.2s;
 }
 
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary:focus-visible {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important;
+    outline: none !important;
+    font-weight: 500 !important;
+}
+
 .section-padding {
     padding: 100px 0;
 }
