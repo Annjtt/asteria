@@ -162,13 +162,34 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><i class="fas ${feature.icon}"></i> ${feature.text}</li>
                                 `).join('')}
                             </ul>
-                            <a href="#booking" class="btn btn-outline-primary btn-sm">Забронировать</a>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="#booking" class="btn btn-outline-primary btn-sm room-book-btn">Забронировать</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             `;
             roomsContainer.innerHTML += roomHTML;
         });
+
+        // Добавляем обработчик для плавного скролла по кнопке 'Забронировать'
+        setTimeout(() => {
+            document.querySelectorAll('.room-book-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const bookingSection = document.getElementById('booking');
+                    const scrollContainer = document.getElementById('scroll-container');
+                    if (bookingSection && window.Scrollbar && scrollbar && scrollContainer) {
+                        const rect = bookingSection.getBoundingClientRect();
+                        const containerRect = scrollContainer.getBoundingClientRect();
+                        const offset = rect.top - containerRect.top + scrollbar.scrollTop - 80;
+                        scrollbar.scrollTo(0, offset, 800);
+                    } else if (bookingSection) {
+                        bookingSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }, 100);
     };
 
     // Загрузка FAQ вопросов
