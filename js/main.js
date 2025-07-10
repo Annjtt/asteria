@@ -275,20 +275,61 @@ document.addEventListener('DOMContentLoaded', function() {
         ];
 
         // Генерируем HTML для каждого изображения галереи
-        galleryItems.forEach(item => {
+        galleryItems.forEach((item, idx) => {
             const galleryHTML = `
                 <div class="col-md-4 gallery-item ${item.category}">
-                    <div class="gallery-image">
+                    <div class="gallery-image" data-idx="${idx}" style="cursor:pointer;">
                         <img src="${item.image}" alt="${item.title}">
                         <div class="gallery-overlay">
-                            <a href="${item.image}" data-lightbox="gallery" data-title="${item.title}">
-                                <i class="fas fa-search-plus"></i>
-                            </a>
+                            <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                 </div>
             `;
             galleryContainer.innerHTML += galleryHTML;
+        });
+
+        // --- Модальное окно для просмотра фото ---
+        if (!document.getElementById('gallery-modal')) {
+            const modal = document.createElement('div');
+            modal.id = 'gallery-modal';
+            modal.innerHTML = `
+                <div class="gallery-modal-backdrop"></div>
+                <div class="gallery-modal-content">
+                    <button class="gallery-modal-close" aria-label="Закрыть">&times;</button>
+                    <img src="" alt="" class="gallery-modal-img">
+                    <div class="gallery-modal-caption"></div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        const modal = document.getElementById('gallery-modal');
+        const modalImg = modal.querySelector('.gallery-modal-img');
+        const modalCaption = modal.querySelector('.gallery-modal-caption');
+        const modalClose = modal.querySelector('.gallery-modal-close');
+        const modalBackdrop = modal.querySelector('.gallery-modal-backdrop');
+
+        // Открытие модалки
+        galleryContainer.querySelectorAll('.gallery-image').forEach(imgDiv => {
+            imgDiv.addEventListener('click', function() {
+                const idx = +this.getAttribute('data-idx');
+                const item = galleryItems[idx];
+                modalImg.src = item.image;
+                modalImg.alt = item.title;
+                modalCaption.textContent = item.title;
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        // Закрытие модалки
+        function closeModal() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        modalClose.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('open') && (e.key === 'Escape' || e.key === 'Esc')) closeModal();
         });
     };
 
