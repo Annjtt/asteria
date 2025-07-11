@@ -1088,8 +1088,9 @@ html::-webkit-scrollbar,
     display: block;
 }
 .season-card .card-title {
+    font-family: 'Caveat', cursive;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2.7rem;
     margin-bottom: 0.5rem;
     letter-spacing: 0.5px;
 }
@@ -1241,4 +1242,18 @@ html::-webkit-scrollbar,
     box-shadow: 0 0 0 1px var(--primary-color), 0 2px 8px var(--shadow-color) !important;
     border-color: var(--primary-color) !important;
     background: var(--light-color) !important;
+}
+
+@media (max-width: 575px) {
+    .season-card .single-price {
+        text-align: center;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .season-card .single-price {
+        text-align: center;
+        margin-left: 0;
+    }
 }
