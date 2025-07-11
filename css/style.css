@@ -1054,9 +1054,9 @@ html::-webkit-scrollbar,
 .season-card {
     border-radius: 18px;
     overflow: hidden;
-    background: linear-gradient(180deg, #fffadfa2 70%, #f3e5c5 100%);
+    background: linear-gradient(150deg, #fffadfa2 70%, #f3e5c5be 100%);
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 12px rgba(62, 150, 113, 0.07);
+    box-shadow: 0 4px 22px rgba(62, 150, 113, 0.10);
     position: relative;
     min-height: 380px;
 }
@@ -1099,6 +1099,11 @@ html::-webkit-scrollbar,
     color: #555;
     margin-bottom: 0.25rem;
 }
+.season-card .food-price {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.25rem;
+}
 .season-card .card-text {
     color: #666;
 }
@@ -1131,9 +1136,6 @@ html::-webkit-scrollbar,
     animation: fadeInUp 1.2s;
 }
 
-.btn-animate {
-    animation: fadeInUp 1.2s;
-}
 
 .btn {
     position: relative;
