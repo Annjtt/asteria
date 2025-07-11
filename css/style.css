@@ -1224,3 +1224,16 @@ html::-webkit-scrollbar,
         margin-right: 0;
     }
 }
+
+.navbar-toggler {
+    transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 1px var(--primary-color), 0 2px 8px var(--shadow-color) !important;
+    border-color: var(--primary-color) !important;
+    background: var(--light-color) !important;
+}
