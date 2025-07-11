@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <li><i class="fas fa-shopping-basket" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — основные продукты и товары первой необходимости</li>
                       <li><i class="fas fa-exclamation-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Ассортимент ограничен, рекомендуем привозить специфические продукты с собой</li>
                     </ul>
-                    <span style="font-size: 0.95em; color: #888;">Магазины работают ежедневно, но график может меняться в зависимости от сезона.</span>
+                    <span style="font-size: 0.95em; color: #888;">Магазины работают ежедневно.</span>
                 `
             },
             {
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
                       <li><i class="fas fa-toilet" style="color: var(--primary-color); margin-right: 6px;"></i>В доме оборудовано 2 туалета</li>
                       <li><i class="fas fa-stairs" style="color: var(--primary-color); margin-right: 6px;"></i>Один туалет расположен на 1 этаже, второй — на 2 этаже</li>
-                      <li><i class="fas fa-hand-holding-water" style="color: var(--primary-color); margin-right: 6px;"></i>В каждом туалете есть раковина для удобства гостей</li>
+                      <li><i class="fas fa-hand-holding-water" style="color: var(--primary-color); margin-right: 6px;"></i>В каждом туалете есть унитаз и раковина для удобства гостей</li>
                     </ul>
                     <span style="font-size: 0.95em; color: #888;">Санузлы поддерживаются в чистоте и доступны для всех проживающих.</span>
                 `
