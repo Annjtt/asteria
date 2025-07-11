@@ -1200,9 +1200,10 @@ html::-webkit-scrollbar,
     }
 }
 
-.gallery-container {
+.gallery-container {  
     display: flex;
     flex-wrap: wrap;
+    margin-top: 12px;
     margin-left: -12px;
     margin-right: -12px;
 }

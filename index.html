@@ -316,8 +316,9 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="location-map rounded shadow-sm overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23678.128522033212!2d131.7078242!3d42.9613392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb5a28e46a9dbfb%3A0x4b9e0eb31ca2884a!2z0J7RgdGC0YDQvtCyINCf0L7Qv9C-0LLQsA!5e0!3m2!1sru!2sru!4v1617321456789!5m2!1sru!2sru" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="location-map rounded shadow-sm overflow-hidden" style="position: relative;">
+                            <div class="map-overlay" style="position: absolute; left:0; top:0; width:100%; height:100%; z-index:2; background:transparent; cursor: pointer;"></div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23678.128522033212!2d131.7078242!3d42.9613392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb5a28e46a9dbfb%3A0x4b9e0eb31ca2884a!2z0J7RgdGC0YDQvtCyINCf0L7Qv9C-0LLQsA!5e0!3m2!1sru!2sru!4v1617321456789!5m2!1sru!2sru" width="100%" height="350" style="border:0; position:relative; z-index:1;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -481,5 +482,12 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.8.1/dist/smooth-scrollbar.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.map-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html> 
