@@ -14,6 +14,9 @@
     --border-color: #e5d3b3;            /* Светлый бежевый для границ */
     --shadow-color: rgba(124, 75, 42, 0.08); /* Венге с прозрачностью */
     --transition: all 0.3s ease;
+    --color-warm: #3e9663;
+    --color-hot: #eca131;
+    --color-velvet: #762f33;
 }
 
 /* Общие стили */
@@ -99,7 +102,7 @@ a:hover {
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .section-title {
@@ -774,7 +777,7 @@ a:hover {
 
 @media (max-width: 767px) {
     .section-padding {
-        padding: 50px 0;
+        padding: 20px 0;
     }
     
     .hero-content h1 {
@@ -1101,6 +1104,8 @@ html::-webkit-scrollbar,
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 0.25rem;
+    text-align: left;
+    margin-left: 18px;
 }
 .season-card .food-price {
     font-size: 1rem;
