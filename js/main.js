@@ -204,23 +204,88 @@ document.addEventListener('DOMContentLoaded', function() {
         const faqs = [
             {
                 question: 'Как добраться до острова Попова?',
-                answer: '<b>До острова Попова можно добраться на пассажирском катере с Корабельной набережной города Владивостока.</b> Время в пути около 50 минут. Расписание катеров зависит от сезона, но обычно они ходят несколько раз в день.'
+                answer: `
+                    <b>Как добраться до острова Попова:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-train-subway" style="color: var(--primary-color); margin-right: 6px;"></i>Доехать до <a href="https://go.2gis.com/pOK1p" target="_blank" style="color: var(--primary-color); text-decoration: none;"><b>Корабельной набережной, 30 ст. 2</b></a> (пассажирский терминал во Владивостоке)</li>
+                      <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Купить билет на катер до о. Попова</li>
+                      <li><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 6px;"></i>Время в пути на катере — около 60 минут</li>
+                      <li><i class="fas fa-person-walking" style="color: var(--primary-color); margin-right: 6px;"></i>От пристани до гостевого дома — 20 минут пешком или трансфер по договорённости</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Возможна организация встречи с причала.</span>
+                `
             },
             {
                 question: 'Что включено в стоимость проживания?',
-                answer: '<b>В стоимость проживания включено:</b> размещение в выбранном номере, пользование общей кухней, зоной барбекю, душем с горячей водой. <b>Питание оплачивается отдельно или можно готовить самостоятельно.</b>'
+                answer: `
+                    <b>В стоимость проживания входит:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-bed" style="color: var(--primary-color); margin-right: 6px;"></i>Проживание в выбранном номере</li>
+                      <li><i class="fas fa-utensils" style="color: var(--primary-color); margin-right: 6px;"></i>Пользование общей кухней</li>
+                      <li><i class="fas fa-fire" style="color: var(--primary-color); margin-right: 6px;"></i>Зона барбекю</li>
+                      <li><i class="fas fa-shower" style="color: var(--primary-color); margin-right: 6px;"></i>Душ с горячей водой</li>
+                      <li><i class="fas fa-parking" style="color: var(--primary-color); margin-right: 6px;"></i>Бесплатная парковка</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Питание оплачивается отдельно или можно готовить самостоятельно.</span>
+                `
             },
             {
                 question: 'Можно ли с домашними животными?',
-                answer: '<b>К сожалению,</b> размещение с домашними животными <b>не предусмотрено</b> для обеспечения комфорта всех гостей и поддержания чистоты в помещениях.'
+                answer: `
+                    <b>Размещение с домашними животными не предусмотрено:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-users" style="color: var(--primary-color); margin-right: 6px;"></i>Для комфорта всех гостей</li>
+                      <li><i class="fas fa-broom" style="color: var(--primary-color); margin-right: 6px;"></i>Для поддержания чистоты в помещениях</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Спасибо за понимание!</span>
+                `
             },
             {
                 question: 'Есть ли на острове магазины?',
-                answer: '<b>Да,</b> на острове достаточно продуктовых магазинов, где можно приобрести основные продукты питания. <b>Однако ассортимент ограничен,</b> поэтому рекомендуется привозить специфические продукты с собой.'
+                answer: `
+                    <b>Магазины на острове Попова:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-store" style="color: var(--primary-color); margin-right: 6px;"></i>На острове есть несколько продуктовых магазинов</li>
+                      <li><i class="fas fa-shopping-basket" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — основные продукты и товары первой необходимости</li>
+                      <li><i class="fas fa-exclamation-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Ассортимент ограничен, рекомендуем привозить специфические продукты с собой</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Магазины работают ежедневно, но график может меняться в зависимости от сезона.</span>
+                `
             },
             {
                 question: 'Какие развлечения доступны на острове?',
-                answer: '<b>Остров Попова предлагает множество возможностей для активного отдыха:</b> пляжи для купания, прогулки по живописным тропам, рыбалка, сбор морепродуктов, катание на лодках и каяках. На территории гостевого дома есть зона барбекю для вечерних посиделок.'
+                answer: `
+                    <b>На острове Попова доступны различные виды активного и спокойного отдыха:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-umbrella-beach" style="color: var(--primary-color); margin-right: 6px;"></i>Пляжи для купания</li>
+                      <li><i class="fas fa-hiking" style="color: var(--primary-color); margin-right: 6px;"></i>Прогулки по живописным тропам</li>
+                      <li><i class="fas fa-fish" style="color: var(--primary-color); margin-right: 6px;"></i>Рыбалка и сбор морепродуктов</li>
+                      <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Катание на лодках и каяках</li>
+                      <li><i class="fas fa-fire" style="color: var(--primary-color); margin-right: 6px;"></i>Зона барбекю для вечерних посиделок</li>
+                    </ul>
+                `
+            },
+            {
+                question: 'Есть ли на острове аптеки?',
+                answer: `
+                    <b>График работы аптеки:</b><br>
+                    Понедельник – суббота: <b>с 09:00 до 16:00</b><br>
+                    Обед: <b>с 13:00 до 14:00</b><br>
+                    Воскресенье — <b>выходной</b><br>
+                    В продаже — только основные лекарства, индивидуальные препараты рекомендуем взять с собой.
+                `
+            },
+            {
+                question: 'Как устроен санузел в гостевом доме?',
+                answer: `
+                    <b>Санузлы в гостевом доме:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-toilet" style="color: var(--primary-color); margin-right: 6px;"></i>В доме оборудовано 2 туалета</li>
+                      <li><i class="fas fa-stairs" style="color: var(--primary-color); margin-right: 6px;"></i>Один туалет расположен на 1 этаже, второй — на 2 этаже</li>
+                      <li><i class="fas fa-hand-holding-water" style="color: var(--primary-color); margin-right: 6px;"></i>В каждом туалете есть раковина для удобства гостей</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Санузлы поддерживаются в чистоте и доступны для всех проживающих.</span>
+                `
             },
             {
                 question: 'Как заранее забронировать номер?',
