@@ -49,8 +49,8 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: var(--text-color-grey);
+    border-color: var(--text-color-grey);
     border-radius: 30px;
     padding: 10px 25px;
     font-weight: 500;

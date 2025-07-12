@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 `).join('')}
                             </ul>
                             <div class="d-flex justify-content-center mt-3">
-                                <a href="#booking" class="btn btn-outline-primary btn-sm room-book-btn btn-pulse">Забронировать</a>
+                                <a href="#booking" class="btn btn-primary btn-pulse">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `
             },
             {
-                question: 'Есть ли на острове магазины и аптека?',
+                question: 'Есть ли на острове магазины и аптеки?',
                 answer: `
                     <div style="font-weight: 600; margin-bottom: 4px;"><i class="fas fa-store" style="color: var(--primary-color); margin-right: 6px;"></i>Магазины:</div>
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
@@ -406,13 +406,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 galleryContainer.innerHTML += galleryHTML;
             });
-            // Если вкладка "Все" и не все показаны — добавить блок "Показать ещё"
+            // Если вкладка "Все" и не все показаны — добавить блок "Показать ещё" как муляж шестой фотографии
             if (isAllTab && !showAll && items.length > 5) {
+                const sixth = items[5];
                 const showMoreHTML = `
-                    <div class="col-md-4 gallery-item gallery-show-more" style="display:flex;align-items:center;justify-content:center;cursor:pointer;min-height:250px;">
-                        <div class="show-more-block btn-pulse" style="text-align:center;width:100%;">
-                            <div style="font-size:2.2rem;color:var(--primary-color);margin-bottom:10px;"><i class="fas fa-images"></i></div>
-                            <div style="font-size:1.1rem;font-weight:600;">Показать ещё</div>
+                    <div class="col-md-4 gallery-item gallery-show-more" style="display:flex;align-items:center;justify-content:center;cursor:pointer;min-height:250px;position:relative;">
+                        <div class="gallery-image" style="width:100%;height:100%;position:absolute;top:0;left:0;z-index:1;">
+                            <img src="${sixth.image}" alt="Показать ещё" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.6);">
+                        </div>
+                        <div class="show-more-block btn-pulse" style="text-align:center;width:100%;z-index:2;position:relative;">
+                            <div style="font-size:2.2rem;color:#fff;margin-bottom:10px;"><i class="fas fa-images"></i></div>
+                            <div style="font-size:1.1rem;font-weight:600;color:#fff;">Показать ещё</div>
                         </div>
                     </div>
                 `;
