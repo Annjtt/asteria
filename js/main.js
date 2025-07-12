@@ -208,11 +208,43 @@ document.addEventListener('DOMContentLoaded', function() {
                     <b>Как добраться до острова Попова:</b>
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
                       <li><i class="fas fa-train-subway" style="color: var(--primary-color); margin-right: 6px;"></i>Доехать до <a href="https://go.2gis.com/pOK1p" target="_blank" style="color: var(--primary-color); text-decoration: none;"><b>Корабельной набережной, 30 ст. 2</b></a> (пассажирский терминал во Владивостоке)</li>
-                      <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Купить билет на катер до о. Попова</li>
-                      <li><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 6px;"></i>Время в пути на катере — около 60 минут</li>
+                      <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Купить билет на водный пассажирский транспорт до о. Попова</li>
+                      <li><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 6px;"></i>Время в пути — около 60 минут</li>
                       <li><i class="fas fa-person-walking" style="color: var(--primary-color); margin-right: 6px;"></i>От пристани до гостевого дома — 20 минут пешком или трансфер по договорённости</li>
                     </ul>
                     <span style="font-size: 0.95em; color: #888;">Возможна организация встречи с причала.</span>
+                `
+            },
+            {
+                question: 'Каковы правила проживания в гостевом доме?',
+                answer: `
+                    <b>Основные правила проживания:</b>
+                    <div style="font-weight: 600; margin-bottom: 4px;"><i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Условия проживания:</div>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-door-open" style="color: var(--primary-color); margin-right: 6px;"></i>Время заезда и выезда — свободное, под расписание движения водного транспорта</li>
+                      <li><i class="fas fa-user-lock" style="color: var(--primary-color); margin-right: 6px;"></i>Вход и выход на территорию — строго с 7:00 до 23:00 и только для проживающих</li>
+                      <li><i class="fas fa-child" style="color: var(--primary-color); margin-right: 6px;"></i>Дети находятся под ответственностью родителей</li>
+                    </ul>
+                    <div style="font-weight: 600; margin: 14px 0 4px 0;"><i class="fas fa-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Запрещено:</div>
+                    <ul style="margin-bottom:0; margin-top:4px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-smoking-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Курение в помещениях строго запрещено</li>
+                      <li><i class="fas fa-volume-mute" style="color: var(--primary-color); margin-right: 6px;"></i>Просим соблюдать тишину с 21:00 до 8:00</li>
+                      <li><i class="fas fa-fire-extinguisher" style="color: var(--primary-color); margin-right: 6px;"></i>Открытый огонь и свечи запрещены в помещениях</li>
+                      <li><i class="fas fa-dog" style="color: var(--primary-color); margin-right: 6px;"></i>Проживание с животными не допускается</li>
+                      <li><i class="fas fa-utensils" style="color: var(--primary-color); margin-right: 6px;"></i>Приготовление пищи в номерах запрещено</li>
+                      <li><i class="fas fa-broom" style="color: var(--primary-color); margin-right: 6px;"></i>Соблюдайте чистоту в номерах и на территории</li>
+                      <li><i class="fas fa-wine-bottle" style="color: var(--primary-color); margin-right: 6px;"></i>Запрещено чрезмерное употребление алкоголя</li>
+                      <li><i class="fas fa-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Нельзя портить имущество и нарушать порядок</li>
+                      <li><i class="fas fa-users-slash" style="color: var(--primary-color); margin-right: 6px;"></i>Запрещено приводить посторонних без согласования</li>
+                    </ul>
+                    <div style="margin-top: 14px; margin-bottom: 4px; font-weight: 600;"><i class="fas fa-exclamation-triangle" style="color: var(--primary-color); margin-right: 6px;"></i>Штрафы и ответственность:</div>
+                    <ul style="margin-bottom:0; margin-top:4px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-smoking-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Курение в помещениях — штраф от 2000 ₽</li>
+                      <li><i class="fas fa-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Порча или утрата имущества — компенсация по стоимости</li>
+                      <li><i class="fas fa-volume-up" style="color: var(--primary-color); margin-right: 6px;"></i>Нарушение тишины — штраф от 1000 ₽</li>
+                      <li><i class="fas fa-key" style="color: var(--primary-color); margin-right: 6px;"></i>Утеря ключа или номерка — штраф 500 ₽</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Благодарим за понимание и уважение к другим гостям!</span>
                 `
             },
             {
@@ -260,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <li><i class="fas fa-umbrella-beach" style="color: var(--primary-color); margin-right: 6px;"></i>Пляжи для купания</li>
                       <li><i class="fas fa-hiking" style="color: var(--primary-color); margin-right: 6px;"></i>Прогулки по живописным тропам</li>
                       <li><i class="fas fa-fish" style="color: var(--primary-color); margin-right: 6px;"></i>Рыбалка и сбор морепродуктов</li>
-                      <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Катание на лодках и каяках</li>
+                      <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Катание на лодках и катамаранах</li>
                       <li><i class="fas fa-fire" style="color: var(--primary-color); margin-right: 6px;"></i>Зона барбекю для вечерних посиделок</li>
                     </ul>
                 `
@@ -268,11 +300,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 question: 'Есть ли на острове аптеки?',
                 answer: `
-                    <b>График работы аптеки:</b><br>
-                    Понедельник – суббота: <b>с 09:00 до 16:00</b><br>
-                    Обед: <b>с 13:00 до 14:00</b><br>
-                    Воскресенье — <b>выходной</b><br>
-                    В продаже — только основные лекарства, индивидуальные препараты рекомендуем взять с собой.
+                    <b>Аптека на острове Попова:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 6px;"></i><b>Пн–Сб:</b> 09:00–16:00 (обед 13:00–14:00)</li>
+                      <li><i class="fas fa-ban" style="color: var(--primary-color); margin-right: 6px;"></i><b>Вс:</b> выходной</li>
+                      <li><i class="fas fa-pills" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — только базовые и самые необходимые лекарства</li>
+                      <li><i class="fas fa-exclamation-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Личные и специфические препараты обязательно возьмите с собой</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Рекомендуем заранее позаботиться о необходимых лекарствах.</span>
                 `
             },
             {
@@ -282,14 +317,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
                       <li><i class="fas fa-toilet" style="color: var(--primary-color); margin-right: 6px;"></i>В доме оборудовано 2 туалета</li>
                       <li><i class="fas fa-stairs" style="color: var(--primary-color); margin-right: 6px;"></i>Один туалет расположен на 1 этаже, второй — на 2 этаже</li>
-                      <li><i class="fas fa-hand-holding-water" style="color: var(--primary-color); margin-right: 6px;"></i>В каждом туалете есть унитаз и раковина для удобства гостей</li>
+                      <li><i class="fas fa-hand-holding-water" style="color: var(--primary-color); margin-right: 6px;"></i>Каждый туалет оборудован унитазом и раковиной для удобства гостей</li>
                     </ul>
                     <span style="font-size: 0.95em; color: #888;">Санузлы поддерживаются в чистоте и доступны для всех проживающих.</span>
                 `
             },
             {
                 question: 'Как заранее забронировать номер?',
-                answer: 'Забронировать номер можно по телефону <b>+7 924 252-79-10</b> - Для подтверждения бронирования может потребоваться предоплата.'
+                answer: `
+                    <b>Бронирование номеров:</b>
+                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-phone-alt" style="color: var(--primary-color); margin-right: 6px;"></i>Позвоните по номеру <a href="tel:+79242527910" style="color: var(--primary-color); font-weight:600; text-decoration:none;">+7 924 252-79-10</a></li>
+                      <li><i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Уточните наличие свободных номеров и детали проживания</li>
+                      <li><i class="fas fa-credit-card" style="color: var(--primary-color); margin-right: 6px;"></i>Для подтверждения бронирования может потребоваться предоплата</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Рекомендуем бронировать заранее — количество мест ограничено!</span>
+                `
             }
         ];
 
