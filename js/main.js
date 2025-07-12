@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 question: 'Каковы правила проживания в гостевом доме?',
                 answer: `
-                    <b>Основные правила проживания:</b>
                     <div style="font-weight: 600; margin-bottom: 4px;"><i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Условия проживания:</div>
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
                       <li><i class="fas fa-door-open" style="color: var(--primary-color); margin-right: 6px;"></i>Время заезда и выезда — свободное, под расписание движения водного транспорта</li>
@@ -273,15 +272,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 `
             },
             {
-                question: 'Есть ли на острове магазины?',
+                question: 'Есть ли на острове магазины и аптека?',
                 answer: `
-                    <b>Магазины на острове Попова:</b>
+                    <div style="font-weight: 600; margin-bottom: 4px;"><i class="fas fa-store" style="color: var(--primary-color); margin-right: 6px;"></i>Магазины:</div>
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
-                      <li><i class="fas fa-store" style="color: var(--primary-color); margin-right: 6px;"></i>На острове есть несколько продуктовых магазинов</li>
-                      <li><i class="fas fa-shopping-basket" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — основные продукты и товары первой необходимости</li>
+                      <li><i class="fas fa-shopping-basket" style="color: var(--primary-color); margin-right: 6px;"></i>На острове есть несколько продуктовых магазинов</li>
+                      <li><i class="fas fa-box" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — основные продукты и товары первой необходимости</li>
                       <li><i class="fas fa-exclamation-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Ассортимент ограничен, рекомендуем привозить специфические продукты с собой</li>
                     </ul>
-                    <span style="font-size: 0.95em; color: #888;">Магазины работают ежедневно.</span>
+                    <div style="font-weight: 600; margin: 14px 0 4px 0;"><i class="fas fa-clinic-medical" style="color: var(--primary-color); margin-right: 6px;"></i>Аптека:</div>
+                    <ul style="margin-bottom:0; margin-top:4px; list-style: none; padding-left: 0;">
+                      <li><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 6px;"></i>Пн–Сб: 09:00–16:00 (обед 13:00–14:00), Вс — выходной</li>
+                      <li><i class="fas fa-pills" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — только базовые и самые необходимые лекарства</li>
+                      <li><i class="fas fa-exclamation-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Личные и специфические препараты обязательно возьмите с собой</li>
+                    </ul>
+                    <span style="font-size: 0.95em; color: #888;">Магазины работают ежедневно. Рекомендуем заранее позаботиться о необходимых лекарствах.</span>
                 `
             },
             {
@@ -291,23 +296,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
                       <li><i class="fas fa-umbrella-beach" style="color: var(--primary-color); margin-right: 6px;"></i>Пляжи для купания</li>
                       <li><i class="fas fa-hiking" style="color: var(--primary-color); margin-right: 6px;"></i>Прогулки по живописным тропам</li>
+                      <li><i class="fas fa-horse" style="color: var(--primary-color); margin-right: 6px;"></i>Прогулки на лошадях</li>
+                      <li><i class="fas fa-map-marked-alt" style="color: var(--primary-color); margin-right: 6px;"></i>Экскурсии по острову и окрестностям</li>
                       <li><i class="fas fa-fish" style="color: var(--primary-color); margin-right: 6px;"></i>Рыбалка и сбор морепродуктов</li>
                       <li><i class="fas fa-ship" style="color: var(--primary-color); margin-right: 6px;"></i>Катание на лодках и катамаранах</li>
                       <li><i class="fas fa-fire" style="color: var(--primary-color); margin-right: 6px;"></i>Зона барбекю для вечерних посиделок</li>
                     </ul>
-                `
-            },
-            {
-                question: 'Есть ли на острове аптеки?',
-                answer: `
-                    <b>Аптека на острове Попова:</b>
-                    <ul style="margin-bottom:0; margin-top:8px; list-style: none; padding-left: 0;">
-                      <li><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 6px;"></i><b>Пн–Сб:</b> 09:00–16:00 (обед 13:00–14:00)</li>
-                      <li><i class="fas fa-ban" style="color: var(--primary-color); margin-right: 6px;"></i><b>Вс:</b> выходной</li>
-                      <li><i class="fas fa-pills" style="color: var(--primary-color); margin-right: 6px;"></i>В продаже — только базовые и самые необходимые лекарства</li>
-                      <li><i class="fas fa-exclamation-circle" style="color: var(--primary-color); margin-right: 6px;"></i>Личные и специфические препараты обязательно возьмите с собой</li>
-                    </ul>
-                    <span style="font-size: 0.95em; color: #888;">Рекомендуем заранее позаботиться о необходимых лекарствах.</span>
                 `
             },
             {
