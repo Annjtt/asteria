@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <li><i class="fas fa-smoking-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Курение в помещениях — штраф от 2000 ₽</li>
                       <li><i class="fas fa-ban" style="color: var(--primary-color); margin-right: 6px;"></i>Порча или утрата имущества — компенсация по стоимости</li>
                       <li><i class="fas fa-volume-up" style="color: var(--primary-color); margin-right: 6px;"></i>Нарушение тишины — штраф от 1000 ₽</li>
-                      <li><i class="fas fa-key" style="color: var(--primary-color); margin-right: 6px;"></i>Утеря ключа или номерка — штраф 500 ₽</li>
+                      <li><i class="fas fa-key" style="color: var(--primary-color); margin-right: 6px;"></i>Утеря ключа или номерка — штраф 1000 ₽</li>
                     </ul>
                     <span style="font-size: 0.95em; color: #888;">Благодарим за понимание и уважение к другим гостям!</span>
                 `
