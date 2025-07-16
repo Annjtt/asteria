@@ -216,7 +216,7 @@ a:hover {
     z-index: 3;
     color: #fff;
     padding: 0 20px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.151);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
 }
 
 .hero-content h1 {
