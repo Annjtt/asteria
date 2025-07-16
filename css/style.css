@@ -108,7 +108,8 @@ a:hover {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
@@ -250,21 +251,24 @@ a:hover {
 .about-image {
     position: relative;
     margin-bottom: 10px;
+    margin: 10px;
 }
 
 .about-image:before {
+    margin: 10px;
     content: '';
     position: absolute;
-    top: -20px;
-    left: -20px;
+    bottom: -22px;
+    right: -22px;
     width: 100%;
     height: 100%;
     border: 2px solid var(--primary-color);
     z-index: -1;
+    border-radius: 8px;
 }
 
 .about-content {
-    padding: 20px 20px;
+    padding: 20px 40px;
 }
 
 .about-content h3 {
